@@ -19,6 +19,7 @@ such as a more parallelization-friendly implementation of eigvenalue estimation.
 """
 
 import torch
+import intel_extension_for_pytorch as ipex
 
 
 def eig_power_iteration(A, num_iterations=50, eps=1e-5):

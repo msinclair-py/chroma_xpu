@@ -22,6 +22,7 @@ from collections import defaultdict, namedtuple
 from typing import List, Literal, Optional, Tuple, Union
 
 import torch
+import intel_extension_for_pytorch as ipex
 import torch.nn as nn
 
 from chroma.constants import AA20_3
@@ -76,8 +77,8 @@ class Chroma(nn.Module):
 
         # If no device is explicity specified automatically set device
         if device is None:
-            if torch.cuda.is_available():
-                device = "cuda"
+            if torch.xpu.is_available():
+                device = "xpu"
             else:
                 device = "cpu"
 

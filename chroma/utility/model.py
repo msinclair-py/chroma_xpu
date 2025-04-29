@@ -24,6 +24,7 @@ from urllib.parse import parse_qs, urlparse
 from uuid import uuid4
 
 import torch
+import intel_extension_for_pytorch as ipex
 
 import chroma.utility.api as api
 from chroma.constants.named_models import NAMED_MODELS

@@ -24,6 +24,7 @@ symmetry-aware rmsds.
 
 import numpy as np
 import torch
+import intel_extension_for_pytorch as ipex
 import torch.nn as nn
 import torch.nn.functional as F
 

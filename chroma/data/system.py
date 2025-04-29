@@ -24,6 +24,7 @@ from typing import Dict, List, Tuple
 
 import numpy as np
 import torch
+import intel_extension_for_pytorch as ipex
 
 import chroma.utility.polyseq as polyseq
 import chroma.utility.starparser as sp

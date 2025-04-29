@@ -19,6 +19,7 @@ from types import SimpleNamespace
 from typing import Optional, Tuple, Union
 
 import torch
+import intel_extension_for_pytorch as ipex
 import torch.nn as nn
 
 from chroma.data.xcs import validate_XC

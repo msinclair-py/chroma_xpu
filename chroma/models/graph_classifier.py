@@ -20,6 +20,7 @@ given backbones. These can be used for sequence design and packing.
 from types import SimpleNamespace
 
 import torch
+import intel_extension_for_pytorch as ipex
 import torch.nn as nn
 
 from chroma.data.xcs import validate_XC

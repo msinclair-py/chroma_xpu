@@ -21,6 +21,7 @@ protein de novo design.
 
 
 import torch.nn as nn
+import intel_extension_for_pytorch as ipex
 
 from chroma.layers import graph
 

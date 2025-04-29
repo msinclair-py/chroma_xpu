@@ -41,6 +41,7 @@ from functools import partial, wraps
 from inspect import getfullargspec
 
 import torch
+import intel_extension_for_pytorch as ipex
 from torch.nn import functional as F
 
 try:

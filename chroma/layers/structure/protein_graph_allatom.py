@@ -24,6 +24,7 @@ natively in pytorch.
 
 import numpy as np
 import torch
+import intel_extension_for_pytorch as ipex
 import torch.nn as nn
 
 from chroma.layers import graph

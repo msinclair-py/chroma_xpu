@@ -23,6 +23,7 @@ https://arxiv.org/pdf/1803.00567.pdf
 
 import numpy as np
 import torch
+import intel_extension_for_pytorch as ipex
 
 
 def optimize_couplings_sinkhorn(C, scale=1.0, iterations=10):

@@ -22,6 +22,7 @@ from typing import Callable, Literal, Optional, Tuple, Union
 
 import numpy as np
 import torch
+import intel_extension_for_pytorch as ipex
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.utils.checkpoint import checkpoint

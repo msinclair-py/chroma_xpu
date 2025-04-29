@@ -19,6 +19,7 @@ from typing import Optional, Tuple, Union
 
 import numpy as np
 import torch
+import intel_extension_for_pytorch as ipex
 import torch.nn.functional as F
 from scipy.sparse.csgraph import shortest_path
 from torch import nn
@@ -369,8 +370,8 @@ class ShapeConditioner(Conditioner):
         """Plan a layout using Gromov-Wasserstein Optimal transport"""
 
         X_target = torch.Tensor(X_target).float().unsqueeze(0)
-        if torch.cuda.is_available():
-            X_target = X_target.to("cuda")
+        if torch.xpu.is_available():
+            X_target = X_target.to("xpu")
 
         chain_ix = torch.arange(4 * num_residues, device=X_target.device) / 4.0
         distance_1D = (chain_ix[None, :, None] - chain_ix[None, None, :]).abs()
@@ -535,8 +536,8 @@ class ProCapConditioner(Conditioner):
             )
         self.model.eval()
         if device is None:
-            if torch.cuda.is_available():
-                self.model.to("cuda")
+            if torch.xpu.is_available():
+                self.model.to("xpu")
         else:
             self.model.to(device)
         self.caption = caption
@@ -615,7 +616,7 @@ class ProClassConditioner(Conditioner):
             overall variance `weight`.
         use_sequence (bool, optional): Whether to use input sequence, default False.
         device (str, optional): the device to put the conditioner on, accepts `cpu`
-            and `cuda`. If None is provided it will automatically try to put it on the
+            and `xpu`. If None is provided it will automatically try to put it on the
              GPU if possible. Defaults to None.
         debug (bool, optional): provides gradient values during optimization for
             setting weights and debugging.
@@ -650,8 +651,8 @@ class ProClassConditioner(Conditioner):
 
         # Move Model to the indicated device
         if device is None:
-            if torch.cuda.is_available():
-                self.proclass_model.to("cuda")
+            if torch.xpu.is_available():
+                self.proclass_model.to("xpu")
         else:
             self.proclass_model.to(device)
 

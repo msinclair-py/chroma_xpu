@@ -25,6 +25,7 @@ from typing import List, Optional, Tuple, Union
 import numpy as np
 import torch
 from scipy.optimize import linear_sum_assignment
+import intel_extension_for_pytorch as ipex
 from scipy.spatial.transform import Rotation
 from tqdm import tqdm
 

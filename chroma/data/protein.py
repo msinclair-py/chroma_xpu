@@ -21,6 +21,7 @@ from typing import List, Optional, Tuple, Union
 
 import nglview as nv
 import torch
+import intel_extension_for_pytorch as ipex
 
 import chroma.utility.polyseq as polyseq
 from chroma.constants import CHAIN_ALPHABET, PROTEIN_TOKENS
